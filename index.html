@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4NiK8.ART — Underground art, punk, and comix from SlugDen Studios</title>
+<meta name="description" content="4NiK8.ART — free underground music, comics, and games from SlugDen Studios, Jasonville, IN. Stream the catalog, play Glyfop-771, shop custom merch.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b6ff00'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-size='30' font-weight='900' text-anchor='middle' fill='%23000'%3E4N%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0d0d;
+    --paper:#f4f1e8;
+    --acid:#b6ff00;
+    --blood:#ff2e2e;
+    --violet:#8b5cf6;
+    --muted:#9a958a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+
+  /* ---------- hero ---------- */
+  header{
+    padding:64px 0 8px;
+    text-align:left;
+    border-bottom:4px solid var(--acid);
+  }
+  .kicker{
+    display:inline-block;
+    background:var(--acid);
+    color:#000;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:5px 10px;
+    transform:rotate(-1.5deg);
+  }
+  h1{
+    font-family:"Archivo Black","Arial Black",sans-serif;
+    font-size:clamp(56px,13vw,120px);
+    line-height:.9;
+    letter-spacing:-.02em;
+    margin:18px 0 6px;
+    text-transform:uppercase;
+  }
+  h1 .dot{color:var(--acid)}
+  h1 .art{color:var(--blood)}
+  .tagline{
+    font-size:clamp(18px,3.4vw,24px);
+    font-weight:500;
+    max-width:640px;
+  }
+  .tagline em{font-style:normal;color:var(--acid)}
+  .hero-note{color:var(--muted);margin-top:14px;font-size:15px}
+  .hero-note strong{color:var(--paper)}
+
+  /* ---------- quick nav ---------- */
+  nav.quick{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin:28px 0 8px;
+  }
+  nav.quick a{
+    text-decoration:none;
+    border:2px solid var(--paper);
+    padding:8px 16px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    transition:all .15s ease;
+  }
+  nav.quick a:hover{background:var(--acid);color:#000;border-color:var(--acid)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:56px}
+  .sec-head{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    border-bottom:2px dashed #3a3a3a;
+    padding-bottom:10px;margin-bottom:20px;
+  }
+  .sec-head h2{
+    font-family:"Archivo Black","Arial Black",sans-serif;
+    font-size:clamp(28px,6vw,40px);
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+  }
+  .sec-head .free{
+    background:var(--blood);color:#fff;
+    font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:3px 8px;transform:rotate(-2deg);
+  }
+  .sec-head p{color:var(--muted);width:100%;font-size:15px;margin-top:-4px}
+
+  /* ---------- cards & buttons ---------- */
+  .grid{display:grid;gap:14px}
+  @media(min-width:560px){ .grid.two{grid-template-columns:1fr 1fr} .grid.three{grid-template-columns:1fr 1fr 1fr} }
+  .card{
+    display:block;
+    text-decoration:none;
+    border:2px solid #2c2c2c;
+    background:#161616;
+    padding:20px;
+    transition:all .15s ease;
+    position:relative;
+  }
+  .card:hover{border-color:var(--acid);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--acid)}
+  .card h3{
+    font-family:"Archivo Black","Arial Black",sans-serif;
+    font-size:20px;text-transform:uppercase;line-height:1.15;
+  }
+  .card p{color:var(--muted);font-size:14px;margin-top:6px}
+  .card .go{
+    display:inline-block;margin-top:14px;
+    font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--acid);
+  }
+  .card .go::after{content:" ↗"}
+  .card.featured{border-color:var(--acid);background:#1a2208}
+  .card.featured h3{font-size:24px}
+  .card.soon{opacity:.65;border-style:dashed}
+  .card.soon:hover{transform:none;box-shadow:none;border-color:#2c2c2c}
+  .card.soon .go{color:var(--muted)}
+  .card.soon .go::after{content:""}
+
+  .plain{
+    border:2px solid #2c2c2c;background:#161616;padding:20px;
+  }
+  .plain h3{
+    font-family:"Archivo Black","Arial Black",sans-serif;
+    font-size:20px;text-transform:uppercase;
+  }
+  .plain p{color:var(--muted);font-size:15px;margin-top:6px}
+  .plain p strong{color:var(--paper)}
+  .badge{
+    display:inline-block;background:var(--violet);color:#fff;
+    font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:3px 8px;margin-bottom:10px;transform:rotate(-1deg);
+  }
+
+  /* ---------- visit / footer ---------- */
+  address{font-style:normal}
+  footer{
+    margin-top:64px;padding-top:24px;
+    border-top:4px solid var(--acid);
+    color:var(--muted);font-size:14px;
+    display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  }
+  footer a{color:var(--paper);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="kicker">SlugDen Studios &bull; Jasonville, Indiana</span>
+    <h1>4NiK8<span class="dot">.</span><span class="art">ART</span></h1>
+    <p class="tagline">Underground art, punk, and comix. <em>Free stuff first.</em> Merch second. No corporate polish, no algorithm worship.</p>
+    <p class="hero-note">One constant across all of it: <strong>4NiK8 on every song.</strong> Everybody else rotates, track to track.</p>
+    <nav class="quick" aria-label="Jump to a section">
+      <a href="#listen">Listen</a>
+      <a href="#play">Play</a>
+      <a href="#read">Read</a>
+      <a href="#shop">Shop</a>
+      <a href="#watch">Watch</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <!-- LISTEN -->
+  <section id="listen">
+    <div class="sec-head">
+      <h2>Listen</h2><span class="free">Free to stream</span>
+      <p>Remastered picks from across the whole catalog, plus new songs and never-before-released tracks. Around 20 albums deep.</p>
+    </div>
+    <div class="grid">
+      <a class="card featured" href="https://music.apple.com/us/playlist/ryan-white-and-the-hiv-positive-all-star-band/pl.u-gxbl8D4s5my3mv7" target="_blank" rel="noopener">
+        <h3>Ryan White and the HIV Positive All Star Band</h3>
+        <p>The entry point. Best-of compilation series drawing from every project — not 20 albums and good luck.</p>
+        <span class="go">Play the playlist on Apple Music</span>
+      </a>
+    </div>
+    <div class="grid two" style="margin-top:14px">
+      <a class="card" href="https://music.apple.com/us/artist/slug-muffin/1503124793" target="_blank" rel="noopener">
+        <h3>Slug Muffin</h3>
+        <p>The active live punk/grunge two-piece. 4NiK8 on guitar and vocals, Owen Faught on drums.</p>
+        <span class="go">Apple Music</span>
+      </a>
+      <a class="card" href="https://music.apple.com/us/artist/the-mkultra-project/1807400607" target="_blank" rel="noopener">
+        <h3>The MKultra Project</h3>
+        <p>Mostly solo. Six albums.</p>
+        <span class="go">Apple Music</span>
+      </a>
+      <a class="card" href="https://music.apple.com/us/artist/tenstrip/1530992330" target="_blank" rel="noopener">
+        <h3>Tenstrip</h3>
+        <p>The former band. Five albums.</p>
+        <span class="go">Apple Music</span>
+      </a>
+      <a class="card" href="https://music.apple.com/us/artist/psydeeffects/1812041185" target="_blank" rel="noopener">
+        <h3>PsydeEffects</h3>
+        <p>Another corner of the catalog.</p>
+        <span class="go">Apple Music</span>
+      </a>
+    </div>
+    <p style="margin-top:14px;color:var(--muted);font-size:14px">Band site: <a href="https://slugmuffin.band/" target="_blank" rel="noopener" style="color:var(--paper);font-weight:700">slugmuffin.band ↗</a></p>
+  </section>
+
+  <!-- PLAY -->
+  <section id="play">
+    <div class="sec-head">
+      <h2>Play</h2><span class="free">Free game</span>
+      <p>Earth's military attacked the alien population of Glyfop-771. Nick sided with the aliens.</p>
+    </div>
+    <a class="card featured" href="https://muse.ai/s/glyfop-771-video-game-xixm6xqxixg36xttxy/aoXFbXxn3ezAHfGd4VAADZYqf-Se1xxJAQT6trEnxLE" target="_blank" rel="noopener">
+      <h3>Glyfop-771</h3>
+      <p>2D side-scrolling action starring the cartoon Nick, drawn in the same style as the art. Play the opening levels free in your browser — keyboard or touch, no download.</p>
+      <span class="go">Play free</span>
+    </a>
+  </section>
+
+  <!-- READ -->
+  <section id="read">
+    <div class="sec-head">
+      <h2>Read</h2>
+      <p>4NiK8 KoMiKs. Hand-drawn, DIY horror and sci-fi.</p>
+    </div>
+    <div class="plain">
+      <span class="badge">In development</span>
+      <h3>Red Flow</h3>
+      <p>A dark sci-fi graphic novel featuring <strong>Lilly Redwater</strong> and <strong>FeeBee Cooper</strong>. Currently being written and illustrated — <strong>not published yet.</strong> Check back here; when pages go live, they'll go live free.</p>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop">
+    <div class="sec-head">
+      <h2>Shop</h2>
+      <p>Custom apparel and art prints. Three stores, three flavors.</p>
+    </div>
+    <div class="grid three">
+      <a class="card" href="https://slugden-studios-music.printify.me/" target="_blank" rel="noopener">
+        <h3>SlugDen Studios Music</h3>
+        <p>Music merch from the studio.</p>
+        <span class="go">Visit store</span>
+      </a>
+      <a class="card" href="https://4nik8-niche-novelty-nest.printify.me/" target="_blank" rel="noopener">
+        <h3>Niche Novelty Nest</h3>
+        <p>Novelties and oddities.</p>
+        <span class="go">Visit store</span>
+      </a>
+      <a class="card" href="https://4nik8-school-spirit.printify.me/" target="_blank" rel="noopener">
+        <h3>School Spirit</h3>
+        <p>School spirit gear.</p>
+        <span class="go">Visit store</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- WATCH -->
+  <section id="watch">
+    <div class="sec-head">
+      <h2>Watch</h2><span class="free">Free</span>
+      <p>Clips, studio chaos, and whatever else makes it out of the SlugDen.</p>
+    </div>
+    <div class="grid two">
+      <a class="card" href="https://www.tiktok.com/@4nik8.art" target="_blank" rel="noopener">
+        <h3>TikTok</h3>
+        <p>@4nik8.art</p>
+        <span class="go">Follow on TikTok</span>
+      </a>
+      <a class="card" href="https://www.instagram.com/4nik8art" target="_blank" rel="noopener">
+        <h3>Instagram</h3>
+        <p>@4nik8art</p>
+        <span class="go">Follow on Instagram</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="downloads">
+    <div class="sec-head">
+      <h2>Downloads</h2>
+      <p>Direct from the studio. No middleman, no paywall on the free stuff.</p>
+    </div>
+    <div class="card soon" aria-disabled="true">
+      <h3>Albums &amp; Art — Coming Soon</h3>
+      <p>Downloadable albums and art files are on the way. When this section goes live, it will link straight to the studio's shared folders.</p>
+      <span class="go">Not yet available</span>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="sec-head">
+      <h2>Visit</h2>
+      <p>Art studio, music rehearsal space, and storefront. Real place, real door.</p>
+    </div>
+    <div class="plain">
+      <h3>SlugDen Studios</h3>
+      <address>
+        <p><strong>121 S Washington St, Jasonville, IN</strong></p>
+        <p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&amp;query=121+S+Washington+St+Jasonville+IN" target="_blank" rel="noopener" style="color:var(--acid);font-weight:700">Get directions ↗</a></p>
+      </address>
+    </div>
+  </section>
+
+  <footer>
+    <span>4NiK8.ART — a SlugDen Studios joint, Jasonville, IN.</span>
+    <span><a href="https://www.tiktok.com/@4nik8.art" target="_blank" rel="noopener">TikTok</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/4nik8art" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://slugmuffin.band/" target="_blank" rel="noopener">slugmuffin.band</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
